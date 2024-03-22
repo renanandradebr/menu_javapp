@@ -5,7 +5,7 @@ public class TelaHome extends JFrame {
     public TelaHome() {
         // Configurações básicas da janela
         setTitle("Tela Home");
-        setSize(600, 400);
+        setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 

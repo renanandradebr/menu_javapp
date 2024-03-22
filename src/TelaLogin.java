@@ -1,16 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TelaLogin extends JFrame {
-    private JTextField campoUsuario;
-    private JPasswordField campoSenha;
+    private final JTextField campoUsuario;
+    private final JPasswordField campoSenha;
 
     public TelaLogin() {
         // Configurações básicas da janela
         setTitle("Tela de Login");
-        setSize(300, 200);
+        setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -35,12 +33,7 @@ public class TelaLogin extends JFrame {
         painel.add(botaoLogin);
 
         // Adiciona ação ao botão de login
-        botaoLogin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                realizarLogin();
-            }
-        });
+        botaoLogin.addActionListener(e -> realizarLogin());
 
         // Adiciona o painel à janela
         add(painel);
@@ -70,11 +63,6 @@ public class TelaLogin extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new TelaLogin();
-            }
-        });
+        SwingUtilities.invokeLater(TelaLogin::new);
     }
 }
